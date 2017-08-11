@@ -13,6 +13,7 @@
 		3EFB6BB61F3AA4BC0093C1A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EFB6BB51F3AA4BC0093C1A5 /* Assets.xcassets */; };
 		3EFB6BB91F3AA4BC0093C1A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFB6BB71F3AA4BC0093C1A5 /* LaunchScreen.storyboard */; };
 		3EFB6BC11F3BF08E0093C1A5 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC01F3BF08E0093C1A5 /* SnippetData.swift */; };
+		3EFB6BC31F3C20960093C1A5 /* TextSnippetEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC21F3C20960093C1A5 /* TextSnippetEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3EFB6BB81F3AA4BC0093C1A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EFB6BBA1F3AA4BC0093C1A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EFB6BC01F3BF08E0093C1A5 /* SnippetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
+		3EFB6BC21F3C20960093C1A5 /* TextSnippetEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				3EFB6BAE1F3AA4BC0093C1A5 /* AppDelegate.swift */,
 				3EFB6BB01F3AA4BC0093C1A5 /* ViewController.swift */,
 				3EFB6BB21F3AA4BC0093C1A5 /* Main.storyboard */,
+				3EFB6BC21F3C20960093C1A5 /* TextSnippetEntryViewController.swift */,
 				3EFB6BB51F3AA4BC0093C1A5 /* Assets.xcassets */,
 				3EFB6BB71F3AA4BC0093C1A5 /* LaunchScreen.storyboard */,
 				3EFB6BBA1F3AA4BC0093C1A5 /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EFB6BC31F3C20960093C1A5 /* TextSnippetEntryViewController.swift in Sources */,
 				3EFB6BB11F3AA4BC0093C1A5 /* ViewController.swift in Sources */,
 				3EFB6BAF1F3AA4BC0093C1A5 /* AppDelegate.swift in Sources */,
 				3EFB6BC11F3BF08E0093C1A5 /* SnippetData.swift in Sources */,
