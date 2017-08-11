@@ -36,7 +36,7 @@ class TextSnippetEntryViewController: UIViewController {
 }
 
 extension TextSnippetEntryViewController: UITextViewDelegate{
-    func textViewDidEndEditing(textView: UITextView){
+    func textViewDidEndEditing(_ textView: UITextView){
         saveText(textView.text)
         dismiss(animated: true,completion: nil)
     }
