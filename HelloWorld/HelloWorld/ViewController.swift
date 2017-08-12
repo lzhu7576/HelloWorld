@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         }
         textEntryVC.modalTransitionStyle = .coverVertical
         textEntryVC.saveText = {(text:String) in
-            let newTextSnippet = TextData(text: text)
+            let newTextSnippet = TextData(text: text, creationDate: NSDate() as Date)
             self.data.append(newTextSnippet)
         }
         present(textEntryVC,animated: true,completion: nil)
@@ -82,7 +82,7 @@ extension ViewController: UIImagePickerControllerDelegate,UINavigationController
             print("Image could not be found")
             return
         }
-        let newPhotoSnippet = PhotoData(photo: image)
+        let newPhotoSnippet = PhotoData(photo: image, creationDate: Date())
         self.data.append(newPhotoSnippet)
         dismiss(animated: true, completion: nil)
     }
