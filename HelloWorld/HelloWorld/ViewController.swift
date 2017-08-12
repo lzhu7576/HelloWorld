@@ -101,11 +101,15 @@ extension ViewController: UITableViewDataSource{
         let cell: UITableViewCell
         let sortedData = data.reversed() as [SnippetData]
         let snippetData = sortedData[indexPath.row]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = formatter.string(from: snippetData.date)
         
         switch snippetData.type {
         case .text:
             cell = tableView.dequeueReusableCell(withIdentifier: "textSnippetCell", for: indexPath)
             (cell as! TextSnippetCell).label.text = (snippetData as! TextData).textData
+            (cell as! TextSnippetCell).date.text = dateString
         case .photo:
             cell = tableView.dequeueReusableCell(withIdentifier: "photoSnippetCell", for: indexPath)
             (cell as! PhotoSnippetCell).photo.image = (snippetData as! PhotoData).photoData
