@@ -12,6 +12,7 @@ import UIKit
 class TextSnippetEntryViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
+    var shouldExit = false
     
     var saveText:(_ text: String) -> Void = {(text:String) in }
     
@@ -30,13 +31,15 @@ class TextSnippetEntryViewController: UIViewController {
         return keyboardToolbar
     }
     
-    func doneButtonPressed(){
+    func doneButtonPressed() {
+        shouldExit = true
         textView.resignFirstResponder()
     }
 }
 
 extension TextSnippetEntryViewController: UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView){
+        guard shouldExit else { return }
         saveText(textView.text)
         dismiss(animated: true,completion: nil)
     }

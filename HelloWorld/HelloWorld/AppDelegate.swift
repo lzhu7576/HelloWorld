@@ -8,17 +8,55 @@
 
 import UIKit
 
+enum ShortcutItems : String {
+    case newText = "com.lzhu.HelloWorld.createTextSnippet"
+    case newPhoto = "com.lzhu.HelloWorld.createPhotoSnippet"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func handleShortcut(shortcutItem: UIApplicationShortcutItem){
+        switch shortcutItem.type {
+            case ShortcutItems.newText.rawValue:
+                let vc = self.window!.rootViewController as! ViewController
+                vc.createNewTextSnippet()
+            case ShortcutItems.newPhoto.rawValue:
+                let vc = self.window!.rootViewController as! ViewController
+                vc.createNewPhotoSnippet()
+            default:
+                break
+        }
+    }
+/*
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
-
+*/
+    
+    func application(_ application: UIApplication, performActionFor
+        shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping(Bool) -> Void){
+        let vc = self.window!.rootViewController!
+        if vc.presentedViewController != nil {
+            let alert = UIAlertController(title: "未完成的片段", message: "是继续还是开始一个新的片段？", preferredStyle: .alert)
+            let continueAction = UIAlertAction(title: "继续", style: .default, handler: nil)
+            let eraseAction = UIAlertAction(title: "删除", style: .destructive){
+                (alert: UIAlertAction!) -> Void in
+                vc.dismiss(animated: true, completion: nil)
+                self.handleShortcut(shortcutItem: shortcutItem)
+            }
+            alert.addAction(continueAction)
+            alert.addAction(eraseAction)
+            vc.presentedViewController!.present(alert,animated: true,completion: nil)
+        }else{
+            handleShortcut(shortcutItem: shortcutItem)
+        }
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
