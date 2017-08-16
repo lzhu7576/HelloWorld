@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
     var data: [SnippetData] = [SnippetData]()
     let imagePicker = UIImagePickerController()
+    let locationManager = CLLocationManager()
     @IBOutlet weak var tableView: UITableView!
+    var currentCoordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 50.0
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        askForLocationPermissions()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -60,7 +68,7 @@ class ViewController: UIViewController {
         }
         textEntryVC.modalTransitionStyle = .coverVertical
         textEntryVC.saveText = {(text:String) in
-            let newTextSnippet = TextData(text: text, creationDate: NSDate() as Date)
+            let newTextSnippet = TextData(text: text, creationDate: NSDate() as Date, creationCoordinate: self.currentCoordinate)
             self.data.append(newTextSnippet)
         }
         present(textEntryVC,animated: true,completion: nil)
@@ -74,6 +82,11 @@ class ViewController: UIViewController {
         imagePicker.sourceType = .camera
         present(imagePicker,animated: true,completion: nil)
     }
+    func askForLocationPermissions(){
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -82,7 +95,7 @@ extension ViewController: UIImagePickerControllerDelegate,UINavigationController
             print("Image could not be found")
             return
         }
-        let newPhotoSnippet = PhotoData(photo: image, creationDate: Date())
+        let newPhotoSnippet = PhotoData(photo: image, creationDate: Date(), creationCoordinate: self.currentCoordinate)
         self.data.append(newPhotoSnippet)
         dismiss(animated: true, completion: nil)
     }
@@ -117,5 +130,24 @@ extension ViewController: UITableViewDataSource{
         return cell
     }
     
+}
+
+extension ViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse{
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager could not get location. Error: \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let currentLocation = locations.last {
+            currentCoordinate = currentLocation.coordinate
+            print("\(currentCoordinate!.latitude),\(currentCoordinate!.longitude)")
+        }
+    }
 }
 

@@ -41,6 +41,8 @@
 			<string>com.lzhu.HelloWorld.createTextSnippet</string>
 		</dict>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Adds location information to a new snippet when it is created.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

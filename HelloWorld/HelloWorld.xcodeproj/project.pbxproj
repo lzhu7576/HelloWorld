@@ -16,6 +16,7 @@
 		3EFB6BC31F3C20960093C1A5 /* TextSnippetEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC21F3C20960093C1A5 /* TextSnippetEntryViewController.swift */; };
 		3EFB6BC51F3EF73E0093C1A5 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC41F3EF73E0093C1A5 /* TextSnippetCell.swift */; };
 		3EFB6BC71F3EF7A70093C1A5 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC61F3EF7A70093C1A5 /* PhotoSnippetCell.swift */; };
+		3EFB6C141F43E12B0093C1A5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFB6C131F43E12B0093C1A5 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3EFB6BC21F3C20960093C1A5 /* TextSnippetEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetEntryViewController.swift; sourceTree = "<group>"; };
 		3EFB6BC41F3EF73E0093C1A5 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
 		3EFB6BC61F3EF7A70093C1A5 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
+		3EFB6C131F43E12B0093C1A5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EFB6C141F43E12B0093C1A5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			children = (
 				3EFB6BAD1F3AA4BC0093C1A5 /* HelloWorld */,
 				3EFB6BAC1F3AA4BC0093C1A5 /* Products */,
+				3EFB6C121F43E12B0093C1A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +78,14 @@
 				3EFB6BC01F3BF08E0093C1A5 /* SnippetData.swift */,
 			);
 			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		3EFB6C121F43E12B0093C1A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EFB6C131F43E12B0093C1A5 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
