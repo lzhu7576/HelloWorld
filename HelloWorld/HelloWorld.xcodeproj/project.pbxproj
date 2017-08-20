@@ -17,6 +17,7 @@
 		3EFB6BC51F3EF73E0093C1A5 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC41F3EF73E0093C1A5 /* TextSnippetCell.swift */; };
 		3EFB6BC71F3EF7A70093C1A5 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6BC61F3EF7A70093C1A5 /* PhotoSnippetCell.swift */; };
 		3EFB6C141F43E12B0093C1A5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFB6C131F43E12B0093C1A5 /* CoreLocation.framework */; };
+		3EFB6C381F4672150093C1A5 /* SnippetData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB6C361F4672150093C1A5 /* SnippetData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3EFB6BC41F3EF73E0093C1A5 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
 		3EFB6BC61F3EF7A70093C1A5 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
 		3EFB6C131F43E12B0093C1A5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3EFB6C371F4672150093C1A5 /* SnippetData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				3EFB6BB71F3AA4BC0093C1A5 /* LaunchScreen.storyboard */,
 				3EFB6BBA1F3AA4BC0093C1A5 /* Info.plist */,
 				3EFB6BC01F3BF08E0093C1A5 /* SnippetData.swift */,
+				3EFB6C361F4672150093C1A5 /* SnippetData.xcdatamodeld */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				3EFB6BC51F3EF73E0093C1A5 /* TextSnippetCell.swift in Sources */,
 				3EFB6BC31F3C20960093C1A5 /* TextSnippetEntryViewController.swift in Sources */,
+				3EFB6C381F4672150093C1A5 /* SnippetData.xcdatamodeld in Sources */,
 				3EFB6BB11F3AA4BC0093C1A5 /* ViewController.swift in Sources */,
 				3EFB6BAF1F3AA4BC0093C1A5 /* AppDelegate.swift in Sources */,
 				3EFB6BC71F3EF7A70093C1A5 /* PhotoSnippetCell.swift in Sources */,
@@ -333,6 +337,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3EFB6C361F4672150093C1A5 /* SnippetData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3EFB6C371F4672150093C1A5 /* SnippetData.xcdatamodel */,
+			);
+			currentVersion = 3EFB6C371F4672150093C1A5 /* SnippetData.xcdatamodel */;
+			path = SnippetData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3EFB6BA31F3AA4BC0093C1A5 /* Project object */;
 }
